@@ -23,7 +23,7 @@
     <div class="row" style="padding: 18px;">
         <div class="col">
             <h1 class="text-center d-xl-flex justify-content-xl-center" style="font-size: 75px;text-align: center">{{sequence.name}}</h1>
-            <h1 class="text-center" style="font-size: 30px;text-align: center;">{{sequence.id}}</h1><a class="btn btn-primary" role="button" style="background: rgba(0,0,0,0);border-style: none;border-right-style: none;" href="../static/img/Figure_1.png"><img src="../static/img/Figure_1.png"></a>
+            <h1 class="text-center" style="font-size: 30px;text-align: center;">{{sequence.id}}</h1><a class="btn btn-primary" role="button" style="background: rgba(0,0,0,0);border-style: none;border-right-style: none;" href="{{'../static/img/'+sequence.id+'.png'}}"><img src="{{'../static/img/'+sequence.id+'.png'}}"></a>
             <h3 class="text-center" style="margin: 5px 0px;">By<strong>&nbsp;{{sequence.author}}</strong></h3>
         </div>
     </div>

@@ -1,5 +1,5 @@
 import random
-
+import matplotlib.pyplot as plt
 import pyoeis
 from flask import Flask, redirect, url_for, render_template, request
 
@@ -50,6 +50,12 @@ def search(content):
     else:
         integers = [int(i) for i in content.split()]
         lst = client.lookup_by_terms(integers)
+        for s in lst:
+            plt.plot(s.unsigned(10000), color="black", marker='o', linestyle='dashed', linewidth=1,
+                     markerfacecolor='tab:green', markersize=6)
+            plt.title(s.unsigned(10))
+            plt.savefig('static/img/'+s.id+'.png', transparent=True)
+            plt.clf()
         return render_template("search.html", seq=content, lst=lst)
 
 
@@ -64,6 +70,11 @@ def sequence(seq_id):
 
     client = pyoeis.OEISClient()
     seq = client.get_by_id(seq_id)
+    plt.plot(seq.unsigned(10000), color="black", marker='o', linestyle='dashed', linewidth=1,
+             markerfacecolor='tab:green', markersize=6)
+    plt.title(seq.unsigned(10))
+    plt.savefig('static/img/' + seq.id + '.png', transparent=True)
+    plt.clf()
     return render_template("sequence.html", sequence=seq)
 
 
