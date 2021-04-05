@@ -1,5 +1,5 @@
 # OEIS Friendly Interface
-Friendly Interface for Online Encyclopedia of Integer Sequences (OEIS).
+Friendly Interface for Online Encyclopedia of Integer Sequences (OEIS) in Flask
 
 ## Home
 ![Home](https://i.imgur.com/84112eT.png)
